@@ -1,0 +1,4 @@
+Configure miss: whether OS is FreeBSD
+Configure miss: whether OS is macOS
+Configure miss: whether to enable the Debug build
+Configure miss: whether to install the systemd service file
