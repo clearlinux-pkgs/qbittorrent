@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6E4A2D025B7CC9A2 (hammered999@gmail.com)
 #
 Name     : qbittorrent
-Version  : 4.1.6
-Release  : 1
-URL      : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.6.tar.xz
-Source0  : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.6.tar.xz
-Source99 : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.6.tar.xz.asc
+Version  : 4.1.7
+Release  : 2
+URL      : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.7.tar.xz
+Source0  : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.7.tar.xz
+Source1 : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.7.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -66,20 +66,24 @@ man components for the qbittorrent package.
 
 
 %prep
-%setup -q -n qbittorrent-4.1.6
+%setup -q -n qbittorrent-4.1.7
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1557782329
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1565633076
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1557782329
+export SOURCE_DATE_EPOCH=1565633076
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
 cp COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/COPYING
