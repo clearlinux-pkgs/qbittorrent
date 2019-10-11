@@ -7,9 +7,9 @@
 Name     : qbittorrent
 Version  : 4.1.7
 Release  : 2
-URL      : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.7.tar.xz
-Source0  : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.7.tar.xz
-Source1 : https://downloads.sf.net/qbittorrent/qbittorrent-4.1.7.tar.xz.asc
+URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.7/qbittorrent-4.1.7.tar.xz
+Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.7/qbittorrent-4.1.7.tar.xz
+Source1 : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.7/qbittorrent-4.1.7.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
