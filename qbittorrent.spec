@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6E4A2D025B7CC9A2 (hammered999@gmail.com)
 #
 Name     : qbittorrent
-Version  : 4.1.7
-Release  : 2
-URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.7/qbittorrent-4.1.7.tar.xz
-Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.7/qbittorrent-4.1.7.tar.xz
-Source1 : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.7/qbittorrent-4.1.7.tar.xz.asc
+Version  : 4.1.9
+Release  : 3
+URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.9/qbittorrent-4.1.9.tar.xz
+Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.9/qbittorrent-4.1.9.tar.xz
+Source1 : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.1.9/qbittorrent-4.1.9.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -26,6 +26,7 @@ BuildRequires : pkgconfig(libtorrent-rasterbar)
 BuildRequires : pkgconfig(zlib)
 BuildRequires : qttools-dev
 BuildRequires : sed
+BuildRequires : util-linux
 
 %description
 qBittorrent - A BitTorrent client in Qt
@@ -66,14 +67,14 @@ man components for the qbittorrent package.
 
 
 %prep
-%setup -q -n qbittorrent-4.1.7
+%setup -q -n qbittorrent-4.1.9
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565633076
+export SOURCE_DATE_EPOCH=1572300519
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -83,10 +84,10 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1565633076
+export SOURCE_DATE_EPOCH=1572300519
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
-cp COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/COPYING
+cp %{_builddir}/qbittorrent-4.1.9/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/949ae914f4f5d1a0ac5f5d99c36b463cce3c69ca
 %make_install
 
 %files
@@ -129,7 +130,7 @@ cp COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/COPYING
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/qbittorrent/COPYING
+/usr/share/package-licenses/qbittorrent/949ae914f4f5d1a0ac5f5d99c36b463cce3c69ca
 
 %files man
 %defattr(0644,root,root,0755)
