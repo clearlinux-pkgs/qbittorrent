@@ -6,11 +6,11 @@
 #
 Name     : qbittorrent
 Version  : 4.2.1
-Release  : 7
+Release  : 8
 URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.2.1/qbittorrent-4.2.1.tar.xz
 Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.2.1/qbittorrent-4.2.1.tar.xz
 Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.2.1/qbittorrent-4.2.1.tar.xz.asc
-Summary  : An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar.
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: qbittorrent-bin = %{version}-%{release}
@@ -29,19 +29,8 @@ BuildRequires : qttools-dev
 BuildRequires : sed
 
 %description
-TRANSLATORS:
-1. Use an editor that has NSIS syntax highlighting(eg Notepad++/Geany). This will
-make your life easier.
-2. Open the relevant .nsi file that exists in the folder named
-"installer-translations"
-3. Lines starting with ";" are considered comments. These include the
-english message to help you with the translation.
-4. Edit only the part inside the quotation marks(""). Unless you know
-what you are doing.
-5. Save the files with utf8 encoding and BOM.
-6. Submit your changes: 1) as a pull request to the official git repo or
-2) open an issue to the bugtracker and attach them or 3) via email or
-4)the same way you provide the translations for qbt itself
+qBittorrent - A BitTorrent client in Qt
+------------------------------------------
 
 %package bin
 Summary: bin components for the qbittorrent package.
@@ -86,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576705568
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583900171
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -97,7 +85,7 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1576705568
+export SOURCE_DATE_EPOCH=1583900171
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
 cp %{_builddir}/qbittorrent-4.2.1/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/949ae914f4f5d1a0ac5f5d99c36b463cce3c69ca
