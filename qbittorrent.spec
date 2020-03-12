@@ -6,7 +6,7 @@
 #
 Name     : qbittorrent
 Version  : 4.2.1
-Release  : 8
+Release  : 9
 URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.2.1/qbittorrent-4.2.1.tar.xz
 Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.2.1/qbittorrent-4.2.1.tar.xz
 Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.2.1/qbittorrent-4.2.1.tar.xz.asc
