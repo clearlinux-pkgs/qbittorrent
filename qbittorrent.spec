@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6E4A2D025B7CC9A2 (hammered999@gmail.com)
 #
 Name     : qbittorrent
-Version  : 4.3.6
-Release  : 18
-URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.6/qbittorrent-4.3.6.tar.xz
-Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.6/qbittorrent-4.3.6.tar.xz
-Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.6/qbittorrent-4.3.6.tar.xz.asc
+Version  : 4.3.7
+Release  : 19
+URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.7/qbittorrent-4.3.7.tar.xz
+Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.7/qbittorrent-4.3.7.tar.xz
+Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.7/qbittorrent-4.3.7.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -67,15 +67,15 @@ man components for the qbittorrent package.
 
 
 %prep
-%setup -q -n qbittorrent-4.3.6
-cd %{_builddir}/qbittorrent-4.3.6
+%setup -q -n qbittorrent-4.3.7
+cd %{_builddir}/qbittorrent-4.3.7
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1625033506
+export SOURCE_DATE_EPOCH=1628728535
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -85,10 +85,10 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1625033506
+export SOURCE_DATE_EPOCH=1628728535
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
-cp %{_builddir}/qbittorrent-4.3.6/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/50e0db5021b110bf641fce3b9ef1a22e89b33257
+cp %{_builddir}/qbittorrent-4.3.7/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/50e0db5021b110bf641fce3b9ef1a22e89b33257
 %make_install
 
 %files
