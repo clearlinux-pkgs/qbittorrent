@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6E4A2D025B7CC9A2 (hammered999@gmail.com)
 #
 Name     : qbittorrent
-Version  : 4.3.8
-Release  : 20
-URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.8/qbittorrent-4.3.8.tar.xz
-Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.8/qbittorrent-4.3.8.tar.xz
-Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.8/qbittorrent-4.3.8.tar.xz.asc
+Version  : 4.3.9
+Release  : 21
+URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.9/qbittorrent-4.3.9.tar.xz
+Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.9/qbittorrent-4.3.9.tar.xz
+Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.3.9/qbittorrent-4.3.9.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -67,15 +67,15 @@ man components for the qbittorrent package.
 
 
 %prep
-%setup -q -n qbittorrent-4.3.8
-cd %{_builddir}/qbittorrent-4.3.8
+%setup -q -n qbittorrent-4.3.9
+cd %{_builddir}/qbittorrent-4.3.9
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1630341806
+export SOURCE_DATE_EPOCH=1635781273
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -85,10 +85,10 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1630341806
+export SOURCE_DATE_EPOCH=1635781273
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
-cp %{_builddir}/qbittorrent-4.3.8/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/95c8749dcb7934538595d05d60e4bc06dfabdb6d
+cp %{_builddir}/qbittorrent-4.3.9/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/95c8749dcb7934538595d05d60e4bc06dfabdb6d
 %make_install
 
 %files
