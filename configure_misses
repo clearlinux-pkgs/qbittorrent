@@ -1,5 +1,4 @@
 Configure miss: g++ option to enable C++11 features
-Configure miss: whether OS is FreeBSD
-Configure miss: whether OS is macOS
+Configure miss: whether to enable specific tweaks for current host "linux-gnu"
 Configure miss: whether to enable the Debug build
 Configure miss: whether to install the systemd service file
