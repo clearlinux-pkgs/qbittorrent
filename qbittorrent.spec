@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6E4A2D025B7CC9A2 (hammered999@gmail.com)
 #
 Name     : qbittorrent
-Version  : 4.4.4
-Release  : 28
-URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.4.4/qbittorrent-4.4.4.tar.xz
-Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.4.4/qbittorrent-4.4.4.tar.xz
-Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.4.4/qbittorrent-4.4.4.tar.xz.asc
+Version  : 4.4.5
+Release  : 29
+URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.4.5/qbittorrent-4.4.5.tar.xz
+Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.4.5/qbittorrent-4.4.5.tar.xz
+Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.4.5/qbittorrent-4.4.5.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -67,15 +67,15 @@ man components for the qbittorrent package.
 
 
 %prep
-%setup -q -n qbittorrent-4.4.4
-cd %{_builddir}/qbittorrent-4.4.4
+%setup -q -n qbittorrent-4.4.5
+cd %{_builddir}/qbittorrent-4.4.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661276396
+export SOURCE_DATE_EPOCH=1661906638
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -85,10 +85,10 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1661276396
+export SOURCE_DATE_EPOCH=1661906638
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
-cp %{_builddir}/qbittorrent-%{version}/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/95c8749dcb7934538595d05d60e4bc06dfabdb6d
+cp %{_builddir}/qbittorrent-%{version}/COPYING %{buildroot}/usr/share/package-licenses/qbittorrent/95c8749dcb7934538595d05d60e4bc06dfabdb6d || :
 %make_install
 
 %files
