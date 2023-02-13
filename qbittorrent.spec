@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x6E4A2D025B7CC9A2 (hammered999@gmail.com)
 #
 Name     : qbittorrent
-Version  : 4.5.0
-Release  : 31
-URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.0/qbittorrent-4.5.0.tar.xz
-Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.0/qbittorrent-4.5.0.tar.xz
-Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.0/qbittorrent-4.5.0.tar.xz.asc
+Version  : 4.5.1
+Release  : 32
+URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.1/qbittorrent-4.5.1.tar.xz
+Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.1/qbittorrent-4.5.1.tar.xz
+Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.1/qbittorrent-4.5.1.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -27,6 +27,9 @@ BuildRequires : pkgconfig(openssl)
 BuildRequires : pkgconfig(zlib)
 BuildRequires : qttools-dev
 BuildRequires : sed
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 qBittorrent - A BitTorrent client in Qt
@@ -67,25 +70,25 @@ man components for the qbittorrent package.
 
 
 %prep
-%setup -q -n qbittorrent-4.5.0
-cd %{_builddir}/qbittorrent-4.5.0
+%setup -q -n qbittorrent-4.5.1
+cd %{_builddir}/qbittorrent-4.5.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1669826636
+export SOURCE_DATE_EPOCH=1676252506
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$FFLAGS -fno-lto "
-export FFLAGS="$FFLAGS -fno-lto "
-export CXXFLAGS="$CXXFLAGS -fno-lto "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1669826636
+export SOURCE_DATE_EPOCH=1676252506
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
 cp %{_builddir}/qbittorrent-%{version}/COPYING.GPLv2 %{buildroot}/usr/share/package-licenses/qbittorrent/4cc77b90af91e615a64ae04893fdffa7939db84c || :
