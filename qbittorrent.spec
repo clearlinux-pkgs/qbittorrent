@@ -7,7 +7,7 @@
 #
 Name     : qbittorrent
 Version  : 4.5.3
-Release  : 34
+Release  : 35
 URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.3/qbittorrent-4.5.3.tar.xz
 Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.3/qbittorrent-4.5.3.tar.xz
 Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.3/qbittorrent-4.5.3.tar.xz.asc
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685403958
+export SOURCE_DATE_EPOCH=1685545179
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -102,7 +102,7 @@ export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
 make  %{?_smp_mflags}
 popd
 %install
-export SOURCE_DATE_EPOCH=1685403958
+export SOURCE_DATE_EPOCH=1685545179
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
 cp %{_builddir}/qbittorrent-%{version}/COPYING.GPLv2 %{buildroot}/usr/share/package-licenses/qbittorrent/4cc77b90af91e615a64ae04893fdffa7939db84c || :
