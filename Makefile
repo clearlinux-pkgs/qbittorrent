@@ -1,5 +1,5 @@
 PKG_NAME := qbittorrent
-URL = https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.5.5/qbittorrent-4.5.5.tar.xz
+URL = https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.6.0/qbittorrent-4.6.0.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
