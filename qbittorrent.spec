@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x6E4A2D025B7CC9A2 (hammered999@gmail.com)
 #
 Name     : qbittorrent
-Version  : 4.6.1
-Release  : 39
-URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.6.1/qbittorrent-4.6.1.tar.xz
-Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.6.1/qbittorrent-4.6.1.tar.xz
-Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.6.1/qbittorrent-4.6.1.tar.xz.asc
+Version  : 4.6.2
+Release  : 40
+URL      : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.6.2/qbittorrent-4.6.2.tar.xz
+Source0  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.6.2/qbittorrent-4.6.2.tar.xz
+Source1  : https://sourceforge.net/projects/qbittorrent/files/qbittorrent/qbittorrent-4.6.2/qbittorrent-4.6.2.tar.xz.asc
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -73,10 +73,10 @@ man components for the qbittorrent package.
 
 
 %prep
-%setup -q -n qbittorrent-4.6.1
-cd %{_builddir}/qbittorrent-4.6.1
+%setup -q -n qbittorrent-4.6.2
+cd %{_builddir}/qbittorrent-4.6.2
 pushd ..
-cp -a qbittorrent-4.6.1 buildavx2
+cp -a qbittorrent-4.6.2 buildavx2
 popd
 
 %build
@@ -84,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1700986893
+export SOURCE_DATE_EPOCH=1701162849
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -121,7 +121,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1700986893
+export SOURCE_DATE_EPOCH=1701162849
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qbittorrent
 cp %{_builddir}/qbittorrent-%{version}/COPYING.GPLv2 %{buildroot}/usr/share/package-licenses/qbittorrent/4cc77b90af91e615a64ae04893fdffa7939db84c || :
